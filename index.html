@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Citadel Sentinel | CTI Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #131313;
+            color: #e5e2e1;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for technical look */
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: #1c1b1b; }
+        ::-webkit-scrollbar-thumb { background: #ffb000; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#432c00",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "secondary-container": "#474747",
+                      "surface-dim": "#131313",
+                      "tertiary-fixed-dim": "#4cd6ff",
+                      "on-tertiary": "#003543",
+                      "surface-tint": "#ffba43",
+                      "on-secondary": "#303030",
+                      "surface": "#131313",
+                      "on-tertiary-fixed-variant": "#004e60",
+                      "on-surface-variant": "#d7c4ac",
+                      "on-primary-fixed-variant": "#614000",
+                      "primary": "#ffd597",
+                      "error": "#ffb4ab",
+                      "primary-fixed-dim": "#ffba43",
+                      "outline-variant": "#524533",
+                      "surface-container-high": "#2a2a2a",
+                      "tertiary": "#a1e5ff",
+                      "background": "#131313",
+                      "on-primary-container": "#6a4700",
+                      "secondary": "#c8c6c5",
+                      "surface-container": "#201f1f",
+                      "surface-container-low": "#1c1b1b",
+                      "inverse-primary": "#805600",
+                      "on-error": "#690005",
+                      "surface-variant": "#353534",
+                      "surface-bright": "#3a3939",
+                      "on-primary-fixed": "#281800",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "on-secondary-container": "#b6b5b4",
+                      "surface-container-lowest": "#0e0e0e",
+                      "secondary-fixed": "#e4e2e1",
+                      "primary-container": "#ffb000",
+                      "inverse-on-surface": "#313030",
+                      "on-background": "#e5e2e1",
+                      "surface-container-highest": "#353534",
+                      "on-surface": "#e5e2e1",
+                      "primary-fixed": "#ffddaf",
+                      "tertiary-fixed": "#b7eaff",
+                      "on-tertiary-fixed": "#001f28",
+                      "inverse-surface": "#e5e2e1",
+                      "tertiary-container": "#00d0fe",
+                      "on-tertiary-container": "#00556a",
+                      "error-container": "#93000a",
+                      "outline": "#9f8e78",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#474747"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0px",
+                      "lg": "0px",
+                      "xl": "0px",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["JetBrains Mono"],
+                      "body": ["JetBrains Mono"],
+                      "label": ["JetBrains Mono"]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-14 bg-black/90 backdrop-blur-3xl border-b border-amber-500/10 shadow-[0_0_40px_rgba(255,176,0,0.04)]">
+<div class="flex items-center gap-8">
+<h1 class="text-xl font-bold tracking-widest text-amber-500">AXIOM SENTINEL</h1>
+<div class="hidden md:flex items-center gap-4 text-zinc-500 font-mono text-sm tracking-tighter uppercase">
+<span class="material-symbols-outlined text-amber-500 text-sm">search</span>
+<span class="text-amber-400 font-bold">TERMINAL_CORE</span>
+<span class="hover:bg-amber-500/10 hover:text-amber-300 transition-colors px-2 py-1 cursor-pointer">NET_SCAN</span>
+<span class="hover:bg-amber-500/10 hover:text-amber-300 transition-colors px-2 py-1 cursor-pointer">GEO_INT</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-500 cursor-pointer hover:bg-amber-500/10 transition-colors p-1" data-icon="monitor_heart">monitor_heart</span>
+<span class="material-symbols-outlined text-amber-500 cursor-pointer hover:bg-amber-500/10 transition-colors p-1" data-icon="warning">warning</span>
+<div class="h-8 w-8 bg-surface-container-highest border border-amber-500/20 flex items-center justify-center">
+<img alt="Guardian Operator Profile" class="w-full h-full" data-alt="Abstract geometric avatar for a security operator with high-contrast amber and black pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUGGNfCvwz1AryD-vjRHqmb1DE_86AlVZyDhSj8pCsYACg4ik-O3qV-tAW-ItlC3Q06O_H475H0CjaPGarrqKJlTsdmfRy7tatQ3xofLKP_ZipPMRzzIcNeSlnwCI5yPl_ilceVaaAMXDkb2bFosk6De12mlRlPr1r7q8WUBNLPalmjoq24TI3HjqXvZi1Hb6Z_veu0HzqlkZ05MqyxGlqZsmye9AyFMwEvWWDzHzzvFjG6f8dlO8oUW5tIX1jE6YLM73BhjIpiMw"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-14 h-[calc(100vh-3.5rem)] w-64 bg-zinc-900/80 backdrop-blur-2xl border-r border-amber-500/5 flex flex-col py-4 z-40 hidden md:flex">
+<div class="px-6 mb-8">
+<div class="text-amber-500 font-black text-xs uppercase tracking-widest">GUARD_SYS_V.1</div>
+<div class="text-[10px] text-zinc-500 font-mono uppercase tracking-tighter">OPERATIONAL</div>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<!-- Active Tab: Citadel (Home/Dashboard focus) -->
+<a class="flex items-center gap-4 px-6 py-3 text-amber-500 border-r-2 border-amber-500 bg-amber-500/5 font-mono text-xs font-medium uppercase transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="fort">fort</span>
+<span>Citadel</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-zinc-400 hover:bg-zinc-800/50 hover:text-amber-200 font-mono text-xs font-medium uppercase transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span>Praxis</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-zinc-400 hover:bg-zinc-800/50 hover:text-amber-200 font-mono text-xs font-medium uppercase transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span>Cyber36</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-zinc-400 hover:bg-zinc-800/50 hover:text-amber-200 font-mono text-xs font-medium uppercase transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+<span>Hardware</span>
+</a>
+</div>
+<div class="mt-auto px-6 pt-4 border-t border-amber-500/5 flex flex-col gap-2">
+<a class="flex items-center gap-2 text-zinc-400 text-[10px] uppercase hover:text-amber-400 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-2 text-zinc-400 text-[10px] uppercase hover:text-amber-400 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="database">database</span>
+<span>Logs</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-14 pb-8 px-6 min-h-screen">
+<!-- Dashboard Header -->
+<section class="py-6 flex flex-col md:flex-row justify-between items-end gap-4">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tighter uppercase text-on-surface">Command_Center</h2>
+<p class="text-zinc-500 text-xs font-mono">SECTOR: 07 | NODE: CTI_BETA_PRIME | STATUS: MONITORING</p>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-low px-4 py-2 border-l-2 border-amber-500">
+<span class="block text-[10px] text-zinc-500 uppercase">Alert Level</span>
+<span class="text-amber-500 font-bold text-lg">CRITICAL_04</span>
+</div>
+<div class="bg-surface-container-low px-4 py-2 border-l-2 border-tertiary-container">
+<span class="block text-[10px] text-zinc-500 uppercase">Active Nodes</span>
+<span class="text-tertiary-container font-bold text-lg">1,204</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Live Threat Intel Map (Large) -->
+<div class="col-span-12 lg:col-span-8 bg-zinc-900/50 backdrop-blur-xl p-0 h-[400px] relative overflow-hidden group">
+<div class="absolute inset-0 z-0 grayscale contrast-125 opacity-40">
+<img class="w-full h-full object-cover" data-alt="High-contrast satellite view of an urban metropolitan area at night with digital UI overlays of flight paths and server nodes" data-location="Washington DC" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5CTn6sceyeigZR5WxsUJ59t-2G5e9bQvueW2jLK7H-p3vYhnHcEFqMW6XMZA1QQNxue0mnLdPYAa6tOX4A867Qm4fTyFStA9t3R3aXRjsAHefqLAfgcIvYTYfXn0dRlzK-aUoe1SrVFIx3z3HqGuFsRkyuU7fDZfs38JxtnCp4JLSjYwnTjoqRAJJ8haAaTDzmP64X55b1A5W-taEM6sZ5ZiSwJfVZKPvy06YR-KbPT9KkbwmH8VkJmaKgMVbSzYuLGnBtPcyLJw"/>
+</div>
+<!-- UI Overlay for Map -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
+<div class="bg-black/80 backdrop-blur-md px-3 py-1 border border-amber-500/30">
+<span class="text-amber-500 text-[10px] font-bold">LIVE_GEO_FEED</span>
+</div>
+<div class="bg-black/80 backdrop-blur-md px-3 py-1 border border-zinc-700">
+<span class="text-zinc-300 text-[10px]">COORDS: 38.8977° N, 77.0365° W</span>
+</div>
+</div>
+<!-- Scanning Effect Element -->
+<div class="absolute top-0 left-0 w-full h-[2px] bg-amber-500/20 shadow-[0_0_10px_#ffb000]"></div>
+<div class="absolute bottom-6 left-6 z-10 max-w-sm">
+<h3 class="text-xl font-bold uppercase text-amber-500 mb-2">Anomalous Data Surge Detected</h3>
+<p class="text-zinc-400 text-xs leading-relaxed">External gateway breach attempt originating from unknown proxy cluster. Mitigation protocol Cit-Alpha initiated.</p>
+</div>
+</div>
+<!-- Active Threats List (Side) -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-low flex flex-col">
+<div class="p-4 bg-surface-container-high flex justify-between items-center">
+<h3 class="text-xs font-black uppercase text-zinc-300 tracking-widest">Active_Threats</h3>
+<span class="material-symbols-outlined text-amber-500 text-sm" data-icon="filter_list">filter_list</span>
+</div>
+<div class="flex-1 overflow-y-auto space-y-px">
+<!-- Threat Item -->
+<div class="bg-surface-container hover:bg-surface-container-high p-4 flex items-center justify-between transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-1 h-8 bg-error"></div>
+<div>
+<div class="text-[11px] font-bold text-error">CVE-2024-X99</div>
+<div class="text-[10px] text-zinc-500 uppercase">Buffer Overflow / Kernel</div>
+</div>
+</div>
+<span class="text-[10px] font-mono text-zinc-600 group-hover:text-amber-500">02m 44s</span>
+</div>
+<div class="bg-surface-container hover:bg-surface-container-high p-4 flex items-center justify-between transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-1 h-8 bg-amber-500"></div>
+<div>
+<div class="text-[11px] font-bold text-amber-500">SQL_INJECT_V3</div>
+<div class="text-[10px] text-zinc-500 uppercase">Input Validation Bypass</div>
+</div>
+</div>
+<span class="text-[10px] font-mono text-zinc-600 group-hover:text-amber-500">14m 12s</span>
+</div>
+<div class="bg-surface-container hover:bg-surface-container-high p-4 flex items-center justify-between transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-1 h-8 bg-zinc-600"></div>
+<div>
+<div class="text-[11px] font-bold text-zinc-400">DNS_POISON_REC</div>
+<div class="text-[10px] text-zinc-500 uppercase">Cache Manipulation</div>
+</div>
+</div>
+<span class="text-[10px] font-mono text-zinc-600 group-hover:text-amber-500">38m 01s</span>
+</div>
+<div class="bg-surface-container hover:bg-surface-container-high p-4 flex items-center justify-between transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-1 h-8 bg-error"></div>
+<div>
+<div class="text-[11px] font-bold text-error">DDOS_SYN_FLOOD</div>
+<div class="text-[10px] text-zinc-500 uppercase">Resource Exhaustion</div>
+</div>
+</div>
+<span class="text-[10px] font-mono text-zinc-600 group-hover:text-amber-500">01h 05s</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-lowest border-t border-white/5">
+<button class="w-full bg-primary-container text-on-primary-fixed py-2 text-[10px] font-black uppercase tracking-widest hover:brightness-110 transition-all">Export_Threat_Log</button>
+</div>
+</div>
+<!-- PoC Mitigation Status Cards (Row) -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-low p-6 flex flex-col gap-4 border-l-4 border-tertiary-container/30">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="verified_user">verified_user</span>
+<span class="text-[10px] font-bold text-zinc-500">STABLE</span>
+</div>
+<div>
+<h4 class="text-zinc-300 font-bold text-sm uppercase">Firewall_Re-Gen</h4>
+<p class="text-zinc-500 text-[10px] mt-1 leading-tight">PoC Phase 4: Automated rule generation for zero-day mitigation is currently testing at 98.4% accuracy.</p>
+</div>
+<div class="mt-4 h-1 bg-zinc-800 relative">
+<div class="absolute inset-0 bg-tertiary-container w-[98%]"></div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 bg-surface-container-low p-6 flex flex-col gap-4 border-l-4 border-amber-500/30">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-amber-500" data-icon="dynamic_form">dynamic_form</span>
+<span class="text-[10px] font-bold text-amber-500">IN_DEV</span>
+</div>
+<div>
+<h4 class="text-zinc-300 font-bold text-sm uppercase">Neural_Honeypot</h4>
+<p class="text-zinc-500 text-[10px] mt-1 leading-tight">PoC Phase 2: Dynamic environment spoofing for attacker misdirection. Latency overhead check required.</p>
+</div>
+<div class="mt-4 h-1 bg-zinc-800 relative">
+<div class="absolute inset-0 bg-amber-500 w-[42%]"></div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 bg-surface-container-low p-6 flex flex-col gap-4 border-l-4 border-zinc-500/30">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-zinc-500" data-icon="cloud_sync">cloud_sync</span>
+<span class="text-[10px] font-bold text-zinc-600">PENDING</span>
+</div>
+<div>
+<h4 class="text-zinc-300 font-bold text-sm uppercase">Encrypted_Sync</h4>
+<p class="text-zinc-500 text-[10px] mt-1 leading-tight">PoC Phase 1: Quantum-resistant key exchange protocol for decentralized node clusters.</p>
+</div>
+<div class="mt-4 h-1 bg-zinc-800 relative">
+<div class="absolute inset-0 bg-zinc-600 w-[12%]"></div>
+</div>
+</div>
+<!-- Detailed Telemetry (Asymmetric Column) -->
+<div class="col-span-12 lg:col-span-9 bg-surface-container-lowest p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xs font-black uppercase text-amber-500 tracking-widest flex items-center gap-2">
+<span class="w-2 h-2 bg-amber-500"></span> Live_System_Telemetry
+                    </h3>
+<div class="flex gap-4 text-[10px] font-mono text-zinc-500">
+<span>CPU: 12.4%</span>
+<span>MEM: 4.8GB</span>
+<span>NET: 420MB/S</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-4 bg-zinc-900 border border-zinc-800">
+<div class="text-[10px] text-zinc-500 mb-1 uppercase">Request Latency</div>
+<div class="text-2xl font-bold text-on-surface">14.0<span class="text-sm text-zinc-600 ml-1">ms</span></div>
+</div>
+<div class="p-4 bg-zinc-900 border border-zinc-800">
+<div class="text-[10px] text-zinc-500 mb-1 uppercase">Auth Success</div>
+<div class="text-2xl font-bold text-on-surface">99.99<span class="text-sm text-zinc-600 ml-1">%</span></div>
+</div>
+<div class="p-4 bg-zinc-900 border border-zinc-800">
+<div class="text-[10px] text-zinc-500 mb-1 uppercase">Node Health</div>
+<div class="text-2xl font-bold text-amber-500">NOMINAL</div>
+</div>
+</div>
+<div class="mt-6 p-4 bg-zinc-950 font-mono text-[10px] text-zinc-400 overflow-hidden">
+<div class="flex gap-4 opacity-50"><span>[14:02:11]</span> <span>SYS_WATCHDOG:</span> <span>HEARTBEAT_OK</span></div>
+<div class="flex gap-4 opacity-70"><span>[14:02:14]</span> <span>CITADEL_CORE:</span> <span>SCANNING_SUBNET_G-04</span></div>
+<div class="flex gap-4 text-amber-500"><span>[14:02:18]</span> <span>AUTH_GATEWAY:</span> <span>EXTERNAL_CHALLENGE_ISSUED [ID: 0x992]</span></div>
+<div class="flex gap-4 opacity-70"><span>[14:02:22]</span> <span>SYS_WATCHDOG:</span> <span>HEARTBEAT_OK</span></div>
+</div>
+</div>
+<!-- Mitigation Queue -->
+<div class="col-span-12 lg:col-span-3 bg-zinc-900 flex flex-col">
+<div class="p-4 bg-amber-500/10 border-b border-amber-500/20">
+<h3 class="text-xs font-black uppercase text-amber-500">Mitigation_Queue</h3>
+</div>
+<div class="p-4 space-y-4">
+<div class="relative pl-6 before:absolute before:left-0 before:top-0 before:w-1 before:h-full before:bg-amber-500">
+<div class="text-[11px] font-bold text-zinc-200 uppercase">Rule_Patch_774</div>
+<div class="text-[9px] text-zinc-500">Target: Load Balancer 01</div>
+<div class="mt-1 text-[9px] font-bold text-amber-500 italic">DEPLOYING...</div>
+</div>
+<div class="relative pl-6 before:absolute before:left-0 before:top-0 before:w-1 before:h-full before:bg-zinc-700">
+<div class="text-[11px] font-bold text-zinc-200 uppercase">IP_Blacklist_Sync</div>
+<div class="text-[9px] text-zinc-500">Target: Global Firewall</div>
+<div class="mt-1 text-[9px] font-bold text-zinc-600">STAGED</div>
+</div>
+<div class="relative pl-6 before:absolute before:left-0 before:top-0 before:w-1 before:h-full before:bg-zinc-700">
+<div class="text-[11px] font-bold text-zinc-200 uppercase">Certs_Update_V2</div>
+<div class="text-[9px] text-zinc-500">Target: Auth Clusters</div>
+<div class="mt-1 text-[9px] font-bold text-zinc-600">PENDING</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Status Bar -->
+<footer class="fixed bottom-0 w-full z-50 flex items-center justify-between px-6 bg-zinc-950 h-8 border-t border-amber-900/20 font-mono text-[10px] leading-tight">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+<span class="text-amber-600">NODE_ID: AX-77</span>
+</div>
+<div class="flex items-center gap-2 text-zinc-600">
+<span class="material-symbols-outlined text-[12px]" data-icon="lock">lock</span>
+<span>SSL: ACTIVE</span>
+</div>
+<div class="flex items-center gap-2 text-zinc-600">
+<span class="material-symbols-outlined text-[12px]" data-icon="timer">timer</span>
+<span>LATENCY: 14MS</span>
+</div>
+</div>
+<div class="flex gap-4">
+<a class="text-zinc-600 hover:text-amber-400 transition-colors uppercase" href="#">SYS_HEALTH</a>
+<a class="text-zinc-600 hover:text-amber-400 transition-colors uppercase" href="#">ENCRYPTION_LAYER</a>
+</div>
+</footer>
+</body></html>
