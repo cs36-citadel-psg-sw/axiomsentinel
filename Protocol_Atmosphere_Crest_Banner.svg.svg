@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1200"
+   height="400"
+   viewBox="0 0 1200 400"
+   fill="none"
+   version="1.1"
+   id="svg29"
+   sodipodi:docname="Protocol_Atmosphere_Crest_Banner.svg.svg"
+   inkscape:export-filename="Protocol_Atmosphere_Crest_Banner.svg.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview29"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.48"
+     inkscape:cx="600.33784"
+     inkscape:cy="199.66216"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg29" />
+  <rect
+     width="1200"
+     height="400"
+     fill="#050505"
+     id="rect1" />
+  <defs
+     id="defs1">
+    <pattern
+       id="protocol-grid"
+       width="40"
+       height="40"
+       patternUnits="userSpaceOnUse">
+      <circle
+         cx="20"
+         cy="20"
+         r="1"
+         fill="#1A1A1A"
+         id="circle1" />
+      <path
+         d="M 20 20 L 40 40 M 20 20 L 0 40"
+         stroke="#111111"
+         stroke-width="0.5"
+         fill="none"
+         id="path1" />
+    </pattern>
+  </defs>
+  <rect
+     width="1200"
+     height="400"
+     fill="url(#protocol-grid)"
+     id="rect2" />
+  <rect
+     x="0"
+     y="0"
+     width="1200"
+     height="6"
+     fill="#FFBF00"
+     id="rect3" />
+  <rect
+     x="40"
+     y="60"
+     width="6"
+     height="280"
+     fill="#1A1A1A"
+     id="rect4" />
+  <rect
+     x="40"
+     y="100"
+     width="6"
+     height="140"
+     fill="#FFBF00"
+     id="rect5" />
+  <text
+     x="70"
+     y="100"
+     fill="#FDFDFD"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="34"
+     font-weight="bold"
+     letter-spacing="2"
+     id="text5">SOVEREIGN MEDIA STACK</text>
+  <text
+     x="70"
+     y="150"
+     fill="#FFBF00"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="28"
+     font-weight="bold"
+     letter-spacing="4"
+     id="text6">&amp; EPISTEMIC AUTONOMICS</text>
+  <text
+     x="70"
+     y="190"
+     fill="#888888"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="14"
+     font-weight="bold"
+     letter-spacing="2"
+     id="text7">PROTOCOL-FIRST // REVERSE MIRRORING ARCHITECTURE</text>
+  <text
+     x="70"
+     y="260"
+     fill="#555555"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="12"
+     letter-spacing="1"
+     id="text8">ROOT AUTHORITY: axiomsentinel.eth // BYPASS_ICANN</text>
+  <text
+     x="70"
+     y="280"
+     fill="#555555"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="12"
+     letter-spacing="1"
+     id="text9">GENESIS LAYER: ARWEAVE / IPFS / SMART CONTRACTS</text>
+  <text
+     x="70"
+     y="300"
+     fill="#555555"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="12"
+     letter-spacing="1"
+     id="text10">CCF M5 LOOP: 72-HOUR SPRINT AUTONOMIC RE-TASKING</text>
+  <rect
+     x="680"
+     y="50"
+     width="480"
+     height="320"
+     rx="4"
+     stroke="#222222"
+     stroke-width="2"
+     fill="none"
+     id="rect10" />
+  <text
+     x="700"
+     y="80"
+     fill="#FDFDFD"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="12"
+     font-weight="bold"
+     letter-spacing="2"
+     id="text11">THE &quot;REVERSE MIRRORING&quot; ARCHITECTURE</text>
+  <rect
+     x="700"
+     y="110"
+     width="100"
+     height="160"
+     fill="#141414"
+     stroke="#FFBF00"
+     stroke-width="2"
+     id="rect11" />
+  <text
+     x="750"
+     y="180"
+     fill="#FFBF00"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="10"
+     font-weight="bold"
+     text-anchor="middle"
+     transform="rotate(270 750 180)"
+     id="text12">axiomsentinel.eth</text>
+  <path
+     d="M 800 190 L 830 190"
+     stroke="#FFBF00"
+     stroke-width="2"
+     marker-end="url(#stack-arrow)"
+     id="path12" />
+  <rect
+     x="850"
+     y="110"
+     width="120"
+     height="160"
+     fill="#0A0A0A"
+     stroke="#FDFDFD"
+     stroke-width="1.5"
+     id="rect12" />
+  <text
+     x="910"
+     y="130"
+     fill="#FDFDFD"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="10"
+     font-weight="bold"
+     text-anchor="middle"
+     id="text13">WEB3 GENESIS</text>
+  <text
+     x="910"
+     y="142"
+     fill="#888888"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="8"
+     text-anchor="middle"
+     id="text14">Immutable SSoT</text>
+  <rect
+     x="860"
+     y="155"
+     width="100"
+     height="20"
+     fill="#141414"
+     stroke="#555555"
+     stroke-width="1"
+     id="rect14" />
+  <text
+     x="910"
+     y="169"
+     fill="#FFBF00"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="9"
+     text-anchor="middle"
+     id="text15">Paragraph</text>
+  <rect
+     x="860"
+     y="185"
+     width="100"
+     height="20"
+     fill="#141414"
+     stroke="#555555"
+     stroke-width="1"
+     id="rect15" />
+  <text
+     x="910"
+     y="199"
+     fill="#FFBF00"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="9"
+     text-anchor="middle"
+     id="text16">Tape (Lens)</text>
+  <rect
+     x="860"
+     y="215"
+     width="100"
+     height="20"
+     fill="#141414"
+     stroke="#555555"
+     stroke-width="1"
+     id="rect16" />
+  <text
+     x="910"
+     y="229"
+     fill="#FFBF00"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="9"
+     text-anchor="middle"
+     id="text17">Audius</text>
+  <rect
+     x="860"
+     y="245"
+     width="100"
+     height="20"
+     fill="#141414"
+     stroke="#555555"
+     stroke-width="1"
+     id="rect17" />
+  <text
+     x="910"
+     y="259"
+     fill="#FFBF00"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="9"
+     text-anchor="middle"
+     id="text18">BlueSky (AT)</text>
+  <path
+     d="M 970 165 L 1020 165"
+     stroke="#FDFDFD"
+     stroke-width="1.5"
+     stroke-dasharray="2 2"
+     marker-end="url(#stack-arrow)"
+     id="path18" />
+  <path
+     d="M 970 195 L 1020 195"
+     stroke="#FDFDFD"
+     stroke-width="1.5"
+     stroke-dasharray="2 2"
+     marker-end="url(#stack-arrow)"
+     id="path19" />
+  <path
+     d="M 970 225 L 1020 225"
+     stroke="#FDFDFD"
+     stroke-width="1.5"
+     stroke-dasharray="2 2"
+     marker-end="url(#stack-arrow)"
+     id="path20" />
+  <path
+     d="M 970 255 L 1020 255"
+     stroke="#FDFDFD"
+     stroke-width="1.5"
+     stroke-dasharray="2 2"
+     marker-end="url(#stack-arrow)"
+     id="path21" />
+  <rect
+     x="1030"
+     y="110"
+     width="110"
+     height="160"
+     fill="#050505"
+     stroke="#333333"
+     stroke-width="1.5"
+     stroke-dasharray="4 4"
+     id="rect21" />
+  <text
+     x="1085"
+     y="130"
+     fill="#888888"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="10"
+     font-weight="bold"
+     text-anchor="middle"
+     id="text21">WEB2.5 SHADOW</text>
+  <text
+     x="1085"
+     y="142"
+     fill="#555555"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="8"
+     text-anchor="middle"
+     id="text22">Legacy Mirrors</text>
+  <rect
+     x="1035"
+     y="155"
+     width="100"
+     height="20"
+     fill="#0A0A0A"
+     stroke="#222222"
+     stroke-width="1"
+     id="rect22" />
+  <text
+     x="1085"
+     y="169"
+     fill="#888888"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="9"
+     text-anchor="middle"
+     id="text23">Substack</text>
+  <rect
+     x="1035"
+     y="185"
+     width="100"
+     height="20"
+     fill="#0A0A0A"
+     stroke="#222222"
+     stroke-width="1"
+     id="rect23" />
+  <text
+     x="1085"
+     y="199"
+     fill="#888888"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="9"
+     text-anchor="middle"
+     id="text24">YouTube</text>
+  <rect
+     x="1035"
+     y="215"
+     width="100"
+     height="20"
+     fill="#0A0A0A"
+     stroke="#222222"
+     stroke-width="1"
+     id="rect24" />
+  <text
+     x="1085"
+     y="229"
+     fill="#888888"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="9"
+     text-anchor="middle"
+     id="text25">Spotify</text>
+  <rect
+     x="1035"
+     y="245"
+     width="100"
+     height="20"
+     fill="#0A0A0A"
+     stroke="#222222"
+     stroke-width="1"
+     id="rect25" />
+  <text
+     x="1085"
+     y="259"
+     fill="#888888"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="9"
+     text-anchor="middle"
+     id="text26">X / Twitter</text>
+  <rect
+     x="700"
+     y="300"
+     width="440"
+     height="40"
+     fill="#141414"
+     stroke="#555555"
+     stroke-width="1"
+     id="rect26" />
+  <text
+     x="920"
+     y="315"
+     fill="#FDFDFD"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="10"
+     font-weight="bold"
+     text-anchor="middle"
+     id="text27">EPISTEMIC AUTONOMICS LEDGER (EAL)</text>
+  <text
+     x="920"
+     y="328"
+     fill="#FFBF00"
+     font-family="'JetBrains Mono', monospace, sans-serif"
+     font-size="9"
+     text-anchor="middle"
+     id="text28">BigQuery -&gt; NotebookLM -&gt; 72hr Sprint Retask</text>
+  <path
+     d="M 1085 270 L 1085 300"
+     stroke="#555555"
+     stroke-width="1.5"
+     marker-end="url(#stack-arrow)"
+     id="path28" />
+  <path
+     d="M 750 300 L 750 270"
+     stroke="#FFBF00"
+     stroke-width="1.5"
+     marker-end="url(#stack-arrow)"
+     id="path29" />
+  <defs
+     id="defs29">
+    <marker
+       id="stack-arrow"
+       markerWidth="6"
+       markerHeight="6"
+       refX="0"
+       refY="3"
+       orient="auto">
+      <polygon
+         points="0 0, 6 3, 0 6"
+         fill="context-stroke"
+         id="polygon29" />
+    </marker>
+  </defs>
+</svg>
